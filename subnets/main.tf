@@ -17,3 +17,7 @@ resource "aws_route_table" "route_table" {
     PROJECT = "roboshop"
   }
 }
+
+output "subnets" {
+  value = module.lm-subnets
+}

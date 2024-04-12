@@ -5,3 +5,7 @@ resource "aws_subnet" "main" {
   tags = local.subnet_tags
   availability_zone = element(var.subnet_availability_zones, count.index)
 }
+
+output "subnets" {
+  value = aws_subnet.main
+}
