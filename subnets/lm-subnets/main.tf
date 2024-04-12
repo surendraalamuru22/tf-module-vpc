@@ -3,5 +3,5 @@ resource "aws_subnet" "main" {
   vpc_id     = var.vpc_id
   cidr_block = element(var.cidr_block, count.index)
   tags = local.subnet_tags
-  subnet_availability_zones = element(var.subnet_availability_zones, count.index)
+  availability_zone = element(var.subnet_availability_zones, count.index)
 }
