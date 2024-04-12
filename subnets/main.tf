@@ -3,4 +3,6 @@ module "lm-subnets" {
   source = "./lm-subnets"
   cidr_block = each.value.cidr_block
   vpc_id = var.vpc_id[0]
+  name = each.value.name
+  env = var.env
 }
