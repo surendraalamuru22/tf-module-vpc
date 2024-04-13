@@ -26,7 +26,3 @@ resource "aws_route_table" "aws_route_table" {
 output "route-tables" {
   value = aws_route_table.aws_route_table
 }
-
-output "id" {
-  value = local.id
-}
