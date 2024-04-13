@@ -28,5 +28,5 @@ output "route-tables" {
 }
 
 output "id" {
-  value = lookup(lookup(aws_route_table.aws_route_table, each.value.name, null), "id", null)
+  value = local.id
 }

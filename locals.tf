@@ -10,4 +10,5 @@ locals {
     PROJECT = "roboshop"
   }
   vpc_ids = [for k, v in aws_vpc.main : v.id]
+
 }
