@@ -26,3 +26,7 @@ resource "aws_route_table" "aws_route_table" {
 output "route-tables" {
   value = aws_route_table.aws_route_table
 }
+
+output "id" {
+  value = lookup(lookup(aws_route_table.aws_route_table, each.value.name, null), "id", null)
+}
