@@ -1,3 +1,3 @@
 output "subnets" {
-  value = module.subnets.subnets
+  value = module.subnets
 }
