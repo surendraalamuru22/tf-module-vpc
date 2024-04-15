@@ -20,7 +20,7 @@ resource "aws_route_table" "aws-route-table" {
 }
 
 output "subnets" {
-  value = module.lm-subnets.subnets
+  value = module.lm-subnets
 }
 #
 #output "route-tables" {
