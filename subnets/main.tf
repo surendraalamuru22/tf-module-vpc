@@ -19,9 +19,9 @@ resource "aws_route_table" "aws-route-table" {
   }
 }
 
-#output "subnets" {
-#  value = module.lm-subnets
-#}
+output "subnets" {
+  value = module.lm-subnets.subnets
+}
 
 output "route-tables" {
   value = aws_route_table.aws_route_table
