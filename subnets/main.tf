@@ -18,14 +18,14 @@ resource "aws_route_table" "aws-route-table" {
     PROJECT = "roboshop"
   }
 }
-
-output "subnets" {
-  value = module.lm-subnets
-}
-
-output "route-table" {
-  value = aws_route_table.aws-route-table
-}
+#
+#output "subnets" {
+#  value = module.lm-subnets
+#}
+#
+#output "route-table" {
+#  value = aws_route_table.aws-route-table
+#}
 
 
 resource "aws_route" "peering-connection-route" {
