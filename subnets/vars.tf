@@ -4,3 +4,4 @@ variable "env" {}
 variable "subnet_availability_zones" {}
 variable "management_vpc" {}
 variable "peering_connection_id" {}
+variable "gateway_id" {}
