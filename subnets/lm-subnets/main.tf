@@ -11,7 +11,7 @@ resource "aws_route_table_association" "route-table-association" {
   subnet_id      = element(aws_subnet.main.*.id, count.index)
   route_table_id = var.route_table_id
 }
-
-output "subnets" {
-  value = aws_subnet.main
-}
+#
+#output "subnets" {
+#  value = aws_subnet.main
+#}
