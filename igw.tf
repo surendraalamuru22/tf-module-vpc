@@ -8,17 +8,17 @@ resource "aws_internet_gateway" "gw" {
   }
 }
 
-#resource "aws_eip" "ngw" {
-#  vpc = true
-#}
-#
-#resource "aws_nat_gateway" "ngw" {
-#  allocation_id = aws_eip.ngw.id
-#  subnet_id     = local.public_subnets_list[0]
-#  tags = {
-#    Name = "NAT GW"
-#  }
-#}
+resource "aws_eip" "ngw" {
+  vpc = true
+}
+
+resource "aws_nat_gateway" "ngw" {
+  allocation_id = aws_eip.ngw.id
+  subnet_id     = local.public_subnets_list[0]
+  tags = {
+    Name = "NAT GW"
+  }
+}
 
 locals {
   private_route_tables = flatten([for i, j in module.private_subnets : j.rt])
