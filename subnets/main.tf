@@ -40,3 +40,11 @@ resource "aws_route" "peering-connection-route" {
 #  destination_cidr_block = "0.0.0.0/0"
 #  gateway_id             = var.gateway_id
 #}
+
+locals {
+  subnets_list = flatten([for i, j in module.lm-subnets : j.subnets])
+}
+
+output "subnet_list" {
+  value = local.subnets_list[*].id
+}
