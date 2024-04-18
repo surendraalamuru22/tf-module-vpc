@@ -34,3 +34,9 @@ resource "aws_route" "peering-connection-route" {
   destination_cidr_block    = lookup(var.management_vpc, "cidr_block", null)
   vpc_peering_connection_id = var.peering_connection_id
 }
+
+resource "aws_route" "internet_gateway_route" {
+  route_table_id         = aws_route_table.aws_route_table.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = var.gateway_id
+}
