@@ -20,5 +20,5 @@ output "rt" {
 
 
 output "route_tables" {
-  value = aws_route_table.aws_route_table
+  value = aws_route_table.aws-route-table
 }
