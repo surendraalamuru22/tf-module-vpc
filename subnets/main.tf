@@ -36,7 +36,7 @@ resource "aws_route" "peering-connection-route" {
 }
 
 resource "aws_route" "internet_gateway_route" {
-  route_table_id         = aws_route_table.aws_route_table.id
+  route_table_id         = aws_route_table.aws-route-table.id
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = var.gateway_id
 }
