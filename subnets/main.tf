@@ -18,14 +18,6 @@ resource "aws_route_table" "aws-route-table" {
     PROJECT = "roboshop"
   }
 }
-#
-#output "subnets" {
-#  value = module.lm-subnets
-#}
-#
-#output "route-table" {
-#  value = aws_route_table.aws-route-table
-#}
 
 
 resource "aws_route" "peering-connection-route" {
@@ -35,8 +27,3 @@ resource "aws_route" "peering-connection-route" {
   vpc_peering_connection_id = var.peering_connection_id
 }
 
-resource "aws_route" "internet_gateway_route" {
-  route_table_id         = aws_route_table.aws-route-table.id
-  destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = var.gateway_id
-}
