@@ -1,7 +1,7 @@
-output "private_subnet" {
+output "private_subnets" {
   value = module.private_subnets
 }
 
-output "public_subnet" {
+output "public_subnets" {
   value = module.public_subnets
 }
