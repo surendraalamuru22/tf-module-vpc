@@ -6,3 +6,4 @@ variable "subnet_availability_zones" {}
 #variable "peering_connection_id" {}
 variable "cidr_block" {}
 variable "name" {}
+variable "gateway_id" {}
