@@ -9,15 +9,7 @@
 #  route_table_id = lookup(lookup(aws_route_table.aws-route-table, each.value.name, null), "id", null)
 #}
 #
-#resource "aws_route_table" "aws-route-table" {
-#  for_each = var.subnets
-#  vpc_id = var.vpc_id[0]
-#  tags = {
-#    Name = "${var.env}-${each.value.name}-rt"
-#    ENV = var.env
-#    PROJECT = "roboshop"
-#  }
-#}
+
 #
 #
 #resource "aws_route" "peering-connection-route" {
@@ -33,6 +25,15 @@ resource "aws_subnet" "main" {
   cidr_block = element(var.cidr_block, count.index)
   tags = local.subnet_tags
   availability_zone = element(var.subnet_availability_zones, count.index)
+}
+
+resource "aws_route_table" "aws-route-table" {
+  vpc_id = var.vpc_id
+  tags = {
+    Name = "${var.env}-${var.name}-rt"
+    ENV = var.env
+    PROJECT = "roboshop"
+  }
 }
 
 #resource "aws_route_table_association" "route-table-association" {
