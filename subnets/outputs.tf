@@ -1,15 +1,15 @@
-locals {
-  subnets_list = flatten([for i, j in module.lm-subnets : j.subnets])
-}
-
-output "subnets_list" {
-  value = local.subnets_list[*].id
-}
-
-
-output "subnets" {
-  value = module.lm-subnets
-}
+#locals {
+#  subnets_list = flatten([for i, j in module.lm-subnets : j.subnets])
+#}
+#
+#output "subnets_list" {
+#  value = local.subnets_list[*].id
+#}
+#
+#
+#output "subnets" {
+#  value = module.lm-subnets
+#}
 
 output "rt" {
    value = [for i, j in aws_route_table.aws-route-table : j.id]
@@ -18,7 +18,7 @@ output "rt" {
 //  //  }
 }
 
-
-output "route_tables" {
-  value = aws_route_table.aws-route-table
-}
+#
+#output "route_tables" {
+#  value = aws_route_table.aws-route-table
+#}
