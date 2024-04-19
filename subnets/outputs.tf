@@ -22,3 +22,8 @@
 #output "route_tables" {
 #  value = aws_route_table.aws-route-table
 #}
+
+
+output "subnets" {
+  value = aws_subnet.main
+}
