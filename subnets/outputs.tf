@@ -10,13 +10,13 @@
 #output "subnets" {
 #  value = module.lm-subnets
 #}
-
-output "rt" {
-   value = [for i, j in aws_route_table.aws-route-table : j.id]
+#
+#output "rt" {
+#   value = [for i, j in aws_route_table.aws-route-table : j.id]
 //  //{
 //  //    for k, v in aws_route_table.aws_route_table : k => v.id
 //  //  }
-}
+#}
 
 #
 #output "route_tables" {
