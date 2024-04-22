@@ -12,3 +12,9 @@ resource "aws_route" "route_from_default_management_route_table" {
   destination_cidr_block    = lookup(var.management_vpc, "cidr_block", null)
   vpc_peering_connection_id = aws_vpc_peering_connection.management-vpc-to-dev-vpc.id
 }
+
+resource "aws_route" "route_to_default_management_route_table" {
+  route_table_id            = lookup(var.management_vpc, "route_table_id", null)
+  destination_cidr_block    = var.cidr_block
+  vpc_peering_connection_id = aws_vpc_peering_connection.management-vpc-to-dev-vpc.id
+}
