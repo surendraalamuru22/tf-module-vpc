@@ -1,6 +1,8 @@
 resource "aws_vpc" "main" {
   cidr_block = var.cidr_block
   tags = local.vpc_tags
+  enable_dns_hostnames = true
+  enable_dns_support   = true
 }
 
 #module "additional_vpc_cidr" {

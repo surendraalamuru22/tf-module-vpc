@@ -5,5 +5,5 @@ variable "private_subnets" {}
 variable "public_subnets" {}
 variable "subnet_availability_zones" {}
 variable "management_vpc" {}
-#variable "private_zone_id" {}
+variable "private_zone_id" {}
 
